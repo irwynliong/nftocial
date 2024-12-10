@@ -4,12 +4,14 @@ import Image from "next/image";
 import { ConnectButton } from "thirdweb/react";
 import thirdwebIcon from "@public/thirdweb.svg";
 import { client } from "./client";
+import Profile from "./profile";
 
 export default function Home() {
   return (
-    <main className="p-4 pb-10 min-h-[100vh] flex items-center justify-center container max-w-screen-lg mx-auto">
-      <div className="py-20">
-        <CustomNavbar />
+    <main className="min-h-[100vh]">
+      <CustomNavbar />
+      <div className="flex items-center justify-center container max-w-screen-lg mx-auto">
+        <Profile />
       </div>
     </main>
   );
@@ -17,7 +19,7 @@ export default function Home() {
 
 function CustomNavbar() {
     return (
-        <Navbar position="static">
+        <Navbar>
           <NavbarBrand>
             <p className="font-bold text-inherit">namecard.</p>
           </NavbarBrand>
