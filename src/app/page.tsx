@@ -6,13 +6,15 @@ import thirdwebIcon from "@public/thirdweb.svg";
 import { client } from "./client";
 import Profile from "./profile";
 import MyWallet from "./my_wallet";
+import Button from "./connect_button";
 
 export default function Home() {
   return (
     <main>
-      <h1
-      className="absolute p-4"
-      >nftocial.</h1>
+      <div className="absolute top-0 right-0 p-4 flex items-center">
+        <h1 className="mr-4">nftocial.</h1>
+        <Button />
+      </div>
       <Tabs aria-label="tabs" variant="underlined" className="pt-2 flex items-center justify-center container max-w-screen-lg mx-auto" size="lg" style={{position:"absolute"}}>
         <Tab key="profile" title="Profile">
           <Profile />
