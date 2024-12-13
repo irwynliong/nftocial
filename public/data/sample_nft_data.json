@@ -1,0 +1,117 @@
+{
+  "NFTs": {
+    "nextPageToken": "592ef962-9107-4b65-8d29-6cd17738939e",
+    "collectibleBalances": [
+      {
+        "address": "0x17EFDA5D8Bb0cf71d1eb86A1b0Db6d0Bf2cEe862",
+        "name": "Galxe - Gaming Gold",
+        "symbol": "GGOLD",
+        "ercType": "ERC-721",
+        "tokenId": "98",
+        "tokenUri": "https://graphigo.prd.galaxy.eco/metadata/0x17efda5d8bb0cf71d1eb86a1b0db6d0bf2cee862/98.json",
+        "metadata": {},
+        "chainId": "43114"
+      },
+      {
+        "address": "0x2347D6ab6C62f47783EF7DDbA7D9a93447250BDf",
+        "name": "Galxe - DeFi Kingdoms Questathon",
+        "symbol": "QUESTATHONDFK",
+        "ercType": "ERC-721",
+        "tokenId": "91",
+        "tokenUri": "https://graphigo.prd.galaxy.eco/metadata/0x2347d6ab6c62f47783ef7ddba7d9a93447250bdf/91.json",
+        "metadata": {},
+        "chainId": "43114"
+      },
+      {
+        "address": "0x32Cf18d3846a9ded2a88DF1FDF8BB6Da11a1eb82",
+        "name": "Galxe - AVAX Finance Track ",
+        "symbol": "AVAXFIN",
+        "ercType": "ERC-721",
+        "tokenId": "133",
+        "tokenUri": "https://graphigo.prd.galaxy.eco/metadata/0x32cf18d3846a9ded2a88df1fdf8bb6da11a1eb82/133.json",
+        "metadata": {},
+        "chainId": "43114"
+      },
+      {
+        "address": "0x377db4d0B2DC0688d4c4308170fCc1bf793e313c",
+        "name": "Galxe - Pulsar Questathon",
+        "symbol": "QUESTATHONPSR",
+        "ercType": "ERC-721",
+        "tokenId": "73",
+        "tokenUri": "https://graphigo.prd.galaxy.eco/metadata/0x377db4d0b2dc0688d4c4308170fcc1bf793e313c/73.json",
+        "metadata": {},
+        "chainId": "43114"
+      },
+      {
+        "address": "0x3DAA63C2D67E5A38447D31bC4cD414Eb95a9Ff56",
+        "name": "Welcome to Joe",
+        "symbol": "Joe",
+        "ercType": "ERC-721",
+        "tokenId": "48588",
+        "tokenUri": "https://graphigo.prd.galaxy.eco/metadata/0x3daa63c2d67e5a38447d31bc4cd414eb95a9ff56/48588.json",
+        "metadata": {},
+        "chainId": "43114"
+      },
+      {
+        "address": "0x42629f7f731e498cC8A04583F20720431e56c9b2",
+        "name": "Galxe - LAMINA1 Questathon",
+        "symbol": "QUESTATHONLAM1",
+        "ercType": "ERC-721",
+        "tokenId": "79",
+        "tokenUri": "https://graphigo.prd.galaxy.eco/metadata/0x42629f7f731e498cc8a04583f20720431e56c9b2/79.json",
+        "metadata": {},
+        "chainId": "43114"
+      },
+      {
+        "address": "0x516a93fC5bA73112eC13A45bdE9c4032f84dD495",
+        "name": "Galxe - COQ Questathon",
+        "symbol": "QUESTATHON",
+        "ercType": "ERC-721",
+        "tokenId": "94",
+        "tokenUri": "https://graphigo.prd.galaxy.eco/metadata/0x516a93fc5ba73112ec13a45bde9c4032f84dd495/94.json",
+        "metadata": {},
+        "chainId": "43114"
+      },
+      {
+        "address": "0x51dcF2B76940d539D071C6FB980232cBc4085784",
+        "name": "Galxe - Maplestory Universe Questathon",
+        "symbol": "QUESTATHONMPLU",
+        "ercType": "ERC-721",
+        "tokenId": "120",
+        "tokenUri": "https://graphigo.prd.galaxy.eco/metadata/0x51dcf2b76940d539d071c6fb980232cbc4085784/120.json",
+        "metadata": {},
+        "chainId": "43114"
+      },
+      {
+        "address": "0x65A3812EA745487A347F0136aB6aB07678B454C8",
+        "name": "Galxe - GoGoPool Questathon",
+        "symbol": "QUESTATHONGGP",
+        "ercType": "ERC-721",
+        "tokenId": "87",
+        "tokenUri": "https://graphigo.prd.galaxy.eco/metadata/0x65a3812ea745487a347f0136ab6ab07678b454c8/87.json",
+        "metadata": {},
+        "chainId": "43114"
+      },
+      {
+        "address": "0x6966544320A721E1218489f2dD4115c5FdddC51D",
+        "name": "Galxe - The Arena Questathon",
+        "symbol": "QUESTATHONARN",
+        "ercType": "ERC-721",
+        "tokenId": "107",
+        "tokenUri": "https://graphigo.prd.galaxy.eco/metadata/0x6966544320a721e1218489f2dd4115c5fdddc51d/107.json",
+        "metadata": {},
+        "chainId": "43114"
+      },
+      {
+        "address": "0x6A0a895Df4A574e2756365dA9D8d3EB9CF989a58",
+        "name": "Galxe - BenQi Questathon",
+        "symbol": "QUESTATHON",
+        "ercType": "ERC-721",
+        "tokenId": "81",
+        "tokenUri": "https://graphigo.prd.galaxy.eco/metadata/0x6a0a895df4a574e2756365da9d8d3eb9cf989a58/81.json",
+        "metadata": {},
+        "chainId": "43114"
+      }
+    ]
+  }
+}

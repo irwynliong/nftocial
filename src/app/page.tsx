@@ -7,9 +7,12 @@ import { client } from "./client";
 import Profile from "./profile";
 import MyWallet from "./my_wallet";
 import Button from "./connect_button";
+import { ThirdwebSDKProvider } from "@thirdweb-dev/react";
 
 export default function Home() {
+  const client_id = process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID;
   return (
+    <ThirdwebSDKProvider activeChain={43114} clientId={client_id}>
     <main>
       <div className="absolute top-0 right-0 p-4 flex items-center">
         <h1 className="mr-4">nftocial.</h1>
@@ -24,5 +27,6 @@ export default function Home() {
         </Tab>
       </Tabs>
     </main>
+    </ThirdwebSDKProvider>
   );
 }
