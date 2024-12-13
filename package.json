@@ -11,6 +11,7 @@
   "dependencies": {
     "@avalabs/avacloud-sdk": "^0.8.2",
     "@nextui-org/react": "^2.6.5",
+    "@supabase/supabase-js": "^2.47.6",
     "@thirdweb-dev/react": "^4.9.4",
     "@thirdweb-dev/sdk": "^4.0.99",
     "axios": "^1.7.9",

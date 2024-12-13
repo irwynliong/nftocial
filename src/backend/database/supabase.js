@@ -36,24 +36,29 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var fetch_nft_data_1 = require("./fetch_nft_data");
-(function () { return __awaiter(void 0, void 0, void 0, function () {
-    var walletAddress, nfts, error_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                walletAddress = '0x3d9fd60AEC344C20Fc0ef161f59225181730f47B';
-                return [4 /*yield*/, (0, fetch_nft_data_1.fetchNFTsData)(walletAddress)];
-            case 1:
-                nfts = _a.sent();
-                console.log('NFTs:', nfts);
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _a.sent();
-                console.error('Failed to fetch NFTs:', error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
+var supabase_js_1 = require("@supabase/supabase-js");
+var dotenv = require('dotenv');
+dotenv.config();
+var SUPABASE_URL = process.env.SUPABASE_URL;
+var SUPABASE_API = process.env.SUPABASE_API;
+var supabase = (0, supabase_js_1.createClient)(SUPABASE_URL, SUPABASE_API);
+function main() {
+    return __awaiter(this, void 0, void 0, function () {
+        var _a, data, error;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, supabase.from('NFTdata').select('*')];
+                case 1:
+                    _a = _b.sent(), data = _a.data, error = _a.error;
+                    if (error) {
+                        console.error(error);
+                    }
+                    else {
+                        console.log(data);
+                    }
+                    return [2 /*return*/];
+            }
+        });
     });
-}); })();
+}
+main();
