@@ -36,22 +36,57 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.delete_matching_row = exports.insert_row = exports.select = void 0;
 var supabase_js_1 = require("@supabase/supabase-js");
 var dotenv = require('dotenv');
 dotenv.config();
 var SUPABASE_URL = process.env.SUPABASE_URL;
 var SUPABASE_API = process.env.SUPABASE_API;
 var supabase = (0, supabase_js_1.createClient)(SUPABASE_URL, SUPABASE_API);
-function main() {
+function select() {
     return __awaiter(this, void 0, void 0, function () {
         var _a, data, error;
         return __generator(this, function (_b) {
             switch (_b.label) {
-                case 0: return [4 /*yield*/, supabase.from('NFTdata').select('*')];
+                case 0: return [4 /*yield*/, supabase
+                        .from('NFTdata')
+                        .select('*')];
                 case 1:
                     _a = _b.sent(), data = _a.data, error = _a.error;
                     if (error) {
                         console.error(error);
+                    }
+                    else {
+                        console.log(data);
+                    }
+                    ;
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.select = select;
+;
+function insert_row() {
+    return __awaiter(this, void 0, void 0, function () {
+        var _a, data, error;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, supabase
+                        .from('NFTdata')
+                        .insert([
+                        {
+                            token_address: '0x9887Bc737Acd4E9e98cAAf817aEB14a874dD64db',
+                            network: 'avalanche',
+                            token_id: '57',
+                            image: "link.com",
+                            sticker: null,
+                        },
+                    ]).select()];
+                case 1:
+                    _a = _b.sent(), data = _a.data, error = _a.error;
+                    if (error) {
+                        console.log(error);
                     }
                     else {
                         console.log(data);
@@ -61,4 +96,30 @@ function main() {
         });
     });
 }
-main();
+exports.insert_row = insert_row;
+;
+function delete_matching_row(token_address) {
+    return __awaiter(this, void 0, void 0, function () {
+        var _a, data, error;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, supabase
+                        .from('NFTdata')
+                        .delete()
+                        .eq('token_address', token_address)
+                        .select()];
+                case 1:
+                    _a = _b.sent(), data = _a.data, error = _a.error;
+                    if (error) {
+                        console.log(error);
+                    }
+                    else {
+                        console.log(data);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.delete_matching_row = delete_matching_row;
+;
