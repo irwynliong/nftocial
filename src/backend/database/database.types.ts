@@ -23,6 +23,29 @@ export interface Database {
                     image: string;
                     sticker: string;
                 }
+            },
+            Users: {
+                Row: {
+                    user_id: string;
+                    username: string;
+                    wallet_address: string;
+                    network: string;
+                    created_at: string;
+                }
+                Insert: {
+                    user_id: string;
+                    username: string;
+                    wallet_address: string;
+                    network: string;
+                    created_at: string;
+                }
+                Update: {
+                    user_id: string;
+                    username: string;
+                    wallet_address: string;
+                    network: string;
+                    created_at: string;
+                }
             }
         }
     }

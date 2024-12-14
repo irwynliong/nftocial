@@ -36,7 +36,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.delete_matching_row = exports.insert_row = exports.select = void 0;
 var supabase_js_1 = require("@supabase/supabase-js");
 var dotenv = require('dotenv');
 dotenv.config();
@@ -65,9 +64,8 @@ function select() {
         });
     });
 }
-exports.select = select;
 ;
-function insert_row() {
+function insert_row(token_address, network, token_id) {
     return __awaiter(this, void 0, void 0, function () {
         var _a, data, error;
         return __generator(this, function (_b) {
@@ -76,9 +74,9 @@ function insert_row() {
                         .from('NFTdata')
                         .insert([
                         {
-                            token_address: '0x9887Bc737Acd4E9e98cAAf817aEB14a874dD64db',
-                            network: 'avalanche',
-                            token_id: '57',
+                            token_address: token_address,
+                            network: network,
+                            token_id: token_id,
                             image: "link.com",
                             sticker: null,
                         },
@@ -96,9 +94,8 @@ function insert_row() {
         });
     });
 }
-exports.insert_row = insert_row;
 ;
-function delete_matching_row(token_address) {
+function delete_matching_row(token_address, network) {
     return __awaiter(this, void 0, void 0, function () {
         var _a, data, error;
         return __generator(this, function (_b) {
@@ -107,6 +104,7 @@ function delete_matching_row(token_address) {
                         .from('NFTdata')
                         .delete()
                         .eq('token_address', token_address)
+                        .eq('network', network)
                         .select()];
                 case 1:
                     _a = _b.sent(), data = _a.data, error = _a.error;
@@ -121,5 +119,57 @@ function delete_matching_row(token_address) {
         });
     });
 }
-exports.delete_matching_row = delete_matching_row;
 ;
+function insert_user(username, wallet_address) {
+    return __awaiter(this, void 0, void 0, function () {
+        var _a, data, error;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, supabase
+                        .from('Users')
+                        .insert([
+                        {
+                            username: username,
+                            wallet_address: wallet_address,
+                        },
+                    ]).select()];
+                case 1:
+                    _a = _b.sent(), data = _a.data, error = _a.error;
+                    if (error) {
+                        console.log(error);
+                    }
+                    else {
+                        console.log(data);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function delete_user(wallet_address) {
+    return __awaiter(this, void 0, void 0, function () {
+        var _a, data, error;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, supabase
+                        .from('Users')
+                        .delete()
+                        .eq('wallet_address', wallet_address)
+                        .select()];
+                case 1:
+                    _a = _b.sent(), data = _a.data, error = _a.error;
+                    if (error) {
+                        console.log(error);
+                    }
+                    else {
+                        console.log(data);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+;
+// insert_user("abc", "7umRd9hV6mfkdDwgrb9T5KsE5bvWEwDSaf1N4w6Tg78J");
+delete_user("7umRd9hV6mfkdDwgrb9T5KsE5bvWEwDSaf1N4w6Tg78J");
+// export { select, insert_row, delete_matching_row, insert_user };
