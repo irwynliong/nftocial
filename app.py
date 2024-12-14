@@ -14,6 +14,18 @@ SAMPLE_DATA_PATH = 'public/data/sample_nft_data.json'
 with open(SAMPLE_DATA_PATH) as f:
     sample_nft_data = json.load(f)
 
+@app.route('/fetch-stickers', methods=['GET'])
+def fetch_stickers():
+    src = 'public/nfts'
+    stickers = []
+    for root, _, files in os.walk(src):
+        for file in files:
+            if file.endswith('_outline.png'):
+                stickers.append(os.path.join(root, file))
+    print(stickers)
+    return jsonify({'stickers': stickers})
+
+
 @app.route('/save-image', methods=['POST'])
 def save_image():
     src = request.form.get('src')

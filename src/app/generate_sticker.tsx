@@ -31,7 +31,8 @@ async function saveNFTImage(src: string, filename: string): Promise<void> {
 // Function to call the Flask API
 async function generateSticker(name: string, src: string): Promise<string> {
   try {
-    const inputPath = `/Users/bingsu/Desktop/work/projects/nftocial/tmp/nfts/${name}.png`;
+    const parsed_name = name.replace(/\s/g, "_").toLowerCase();
+    const inputPath = `/Users/bingsu/Desktop/work/projects/nftocial/public/nfts/${parsed_name}.png`;
     await saveNFTImage(src, inputPath);
     // Create the form data to send in the POST request
     const formData = new FormData();
