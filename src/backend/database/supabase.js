@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.select_images_from_token_address = exports.delete_user = exports.insert_user = exports.delete_matching_row = exports.insert_row = exports.select = void 0;
 var supabase_js_1 = require("@supabase/supabase-js");
 var dotenv = require('dotenv');
 dotenv.config();
@@ -64,6 +65,7 @@ function select() {
         });
     });
 }
+exports.select = select;
 ;
 function insert_row(token_address, network, token_id) {
     return __awaiter(this, void 0, void 0, function () {
@@ -94,6 +96,7 @@ function insert_row(token_address, network, token_id) {
         });
     });
 }
+exports.insert_row = insert_row;
 ;
 function delete_matching_row(token_address, network) {
     return __awaiter(this, void 0, void 0, function () {
@@ -119,8 +122,9 @@ function delete_matching_row(token_address, network) {
         });
     });
 }
+exports.delete_matching_row = delete_matching_row;
 ;
-function insert_user(username, wallet_address) {
+function insert_user(username, wallet_address, network) {
     return __awaiter(this, void 0, void 0, function () {
         var _a, data, error;
         return __generator(this, function (_b) {
@@ -131,6 +135,7 @@ function insert_user(username, wallet_address) {
                         {
                             username: username,
                             wallet_address: wallet_address,
+                            network: network,
                         },
                     ]).select()];
                 case 1:
@@ -146,6 +151,7 @@ function insert_user(username, wallet_address) {
         });
     });
 }
+exports.insert_user = insert_user;
 function delete_user(wallet_address) {
     return __awaiter(this, void 0, void 0, function () {
         var _a, data, error;
@@ -169,7 +175,31 @@ function delete_user(wallet_address) {
         });
     });
 }
+exports.delete_user = delete_user;
 ;
-// insert_user("abc", "7umRd9hV6mfkdDwgrb9T5KsE5bvWEwDSaf1N4w6Tg78J");
-delete_user("7umRd9hV6mfkdDwgrb9T5KsE5bvWEwDSaf1N4w6Tg78J");
-// export { select, insert_row, delete_matching_row, insert_user };
+function select_images_from_token_address(token_address, network) {
+    return __awaiter(this, void 0, void 0, function () {
+        var _a, data, error;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, supabase
+                        .from('NFTdata')
+                        .select('stickers')
+                        .eq('token_address', token_address)
+                        .eq('network', network)];
+                case 1:
+                    _a = _b.sent(), data = _a.data, error = _a.error;
+                    if (error) {
+                        console.error(error);
+                    }
+                    else {
+                        console.log(data);
+                    }
+                    ;
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.select_images_from_token_address = select_images_from_token_address;
+;

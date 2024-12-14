@@ -55,13 +55,14 @@ async function delete_matching_row(token_address: string, network: string) {
   }
 };
 
-async function insert_user(username: string, wallet_address: string) {
+async function insert_user(username: string, wallet_address: string, network: string) {
   const { data, error } = await supabase
     .from('Users')
     .insert([
       {
         username: username,
         wallet_address: wallet_address,
+        network: network,
       },
     ]).select();
   if(error) {
