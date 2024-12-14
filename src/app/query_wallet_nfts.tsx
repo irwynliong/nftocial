@@ -1,5 +1,3 @@
-import { select, insert_row, delete_matching_row, insert_user, delete_user, select_images_from_token_address } from "../backend/database/supabase";
-
 const dev_API_URL = "http://localhost:8000/test_acquire_wallet_nfts"; 
 const prod_API_URL = "https://api.nft-sticker-generator.com/acquire_wallet_nfts";
 
@@ -26,7 +24,6 @@ async function acquire_wallet_nfts(wallet_address: string): Promise<Array<NFT>> 
         const data = await response.json();
         const output: Array<NFT> = [];
         data.map((nft:any, index: number) => {
-            insert_row(nft.address, "Ethereum", nft.tokenId);
             output.push(
                 {
                     id: index,

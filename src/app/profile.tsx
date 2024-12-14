@@ -1,7 +1,7 @@
 import { Image, Avatar, Tooltip } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import { ConnectButton, defaultTokens } from "thirdweb/react";
-import { client } from "./client";
+import { client } from "../lib/client";
 import ProfileCard from "./card";
 import fetchStickers from "./fetch_stickers";
 import Login from "./login";

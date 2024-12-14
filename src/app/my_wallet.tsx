@@ -3,7 +3,7 @@ import { act, useState, useEffect } from "react";
 import { ConnectButton, defaultTokens, useActiveAccount } from "thirdweb/react";
 import { ThirdwebNftMedia, useContract, useNFT,  MediaRenderer } from "@thirdweb-dev/react";
 import thirdwebIcon from "@public/thirdweb.svg";
-import { client } from "./client";
+import { client } from "../lib/client";
 import { Button, Card, CardHeader, CardBody, CardFooter } from "@nextui-org/react";
 import { desc, img } from "framer-motion/client";
 import generateSticker from "./generate_sticker";

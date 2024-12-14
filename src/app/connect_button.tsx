@@ -1,7 +1,7 @@
 // app/page.tsx
 import type { NextPage } from "next";
 import { ConnectButton } from "thirdweb/react";
-import { client } from "./client";
+import { client } from "../lib/client";
 import {
   generatePayload,
   isLoggedIn,
