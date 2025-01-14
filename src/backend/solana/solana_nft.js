@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.insert_user_solana = exports.insert_NFTsData = void 0;
 var fetch_nft_data_solana_1 = require("./fetch_nft_data_solana");
 var supabase_1 = require("../database/supabase");
 function insert_NFTsData(walletAddress) {
@@ -71,4 +72,18 @@ function insert_NFTsData(walletAddress) {
         });
     });
 }
+exports.insert_NFTsData = insert_NFTsData;
+function insert_user_solana(username, wallet_address) {
+    return __awaiter(this, void 0, void 0, function () {
+        var network;
+        return __generator(this, function (_a) {
+            network = 'solana';
+            (0, supabase_1.insert_user)(username, wallet_address, network);
+            return [2 /*return*/];
+        });
+    });
+}
+exports.insert_user_solana = insert_user_solana;
+;
+// insert_user_solana("unique_name", "9L36X5wpRgFHavH6NT5Rwo5Lwv9E6WkmiFKJNv6jvBdZ");
 insert_NFTsData('9L36X5wpRgFHavH6NT5Rwo5Lwv9E6WkmiFKJNv6jvBdZ');

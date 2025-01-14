@@ -36,24 +36,56 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.insert_NFTsData = void 0;
 var fetch_nft_data_1 = require("./fetch_nft_data");
-(function () { return __awaiter(void 0, void 0, void 0, function () {
-    var walletAddress, nfts, error_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                walletAddress = '0x3d9fd60AEC344C20Fc0ef161f59225181730f47B';
-                return [4 /*yield*/, (0, fetch_nft_data_1.fetchNFTsData)(walletAddress)];
-            case 1:
-                nfts = _a.sent();
-                console.log('NFTs:', nfts);
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _a.sent();
-                console.error('Failed to fetch NFTs:', error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
+var supabase_1 = require("../database/supabase");
+// (async () => {
+//   try {
+//     const walletAddress = '0x3d9fd60AEC344C20Fc0ef161f59225181730f47B';
+//     const nfts = await fetchNFTsData(walletAddress);
+//     console.log('NFTs:', nfts);
+//     // const walletAddressWithToken: Collectible[] = nfts.collectibleBalances.map((nft: any) => ({
+//     //   address: nft.address,
+//     //   tokenUri: nft.tokenUri,
+//     // }));
+//     // console.log('Wallet Address with Token URIs:', walletAddressWithToken);
+//   } catch (error) {
+//     console.error('Failed to fetch NFTs:', error);
+//   }
+// })();
+function insert_NFTsData(walletAddress) {
+    return __awaiter(this, void 0, void 0, function () {
+        var network, data, result, error_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    network = 'avalanche';
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, (0, fetch_nft_data_1.fetchNFTsData)(walletAddress)];
+                case 2:
+                    data = _a.sent();
+                    console.log('NFTs:', data);
+                    result = data.collectibleBalances.map(function (nft) { return ({
+                        nft_id: nft.tokenId,
+                        contract_address: nft.address
+                    }); });
+                    result.forEach(function (nft) {
+                        var token_id = nft.nft_id;
+                        var token_address = nft.contract_address;
+                        (0, supabase_1.insert_row)(token_address, network, token_id);
+                    });
+                    console.log('NFTs inserted successfully');
+                    return [3 /*break*/, 4];
+                case 3:
+                    error_1 = _a.sent();
+                    console.error('Failed to insert NFTs:', error_1);
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/];
+            }
+        });
     });
-}); })();
+}
+exports.insert_NFTsData = insert_NFTsData;
+insert_NFTsData('0x3d9fd60AEC344C20Fc0ef161f59225181730f47B');

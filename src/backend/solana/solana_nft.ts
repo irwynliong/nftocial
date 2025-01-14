@@ -32,5 +32,5 @@ async function insert_user_solana(username: string, wallet_address: string) {
 
 export {insert_NFTsData, insert_user_solana};
 
-insert_user_solana("unique_name", "9L36X5wpRgFHavH6NT5Rwo5Lwv9E6WkmiFKJNv6jvBdZ");
-insert_NFTsData('9L36X5wpRgFHavH6NT5Rwo5Lwv9E6WkmiFKJNv6jvBdZ');
+// insert_user_solana("unique_name", "9L36X5wpRgFHavH6NT5Rwo5Lwv9E6WkmiFKJNv6jvBdZ");
+// insert_NFTsData('9L36X5wpRgFHavH6NT5Rwo5Lwv9E6WkmiFKJNv6jvBdZ');
